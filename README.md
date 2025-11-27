@@ -37,25 +37,11 @@ Sistema de regras de elegibilidade para financiamento de veículos.
 
 ## 🚀 Tecnologias
 
-- Java 21
-- Spring Boot 3.x
-- Kotlin
+- Java 25
+- Spring Boot 4.x
+- JAVa
 
 ## 📦 Instalação
 ```bash
-./mvnw clean install
+./gradlew
 ```
-
-## ▶️ Execução
-```bash
-./mvnw spring-boot:run
-```
-
-## 🧪 Testes
-```bash
-./mvnw test
-```
-
-## 📝 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).
