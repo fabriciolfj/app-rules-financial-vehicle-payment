@@ -1,4 +1,4 @@
-# Rules Eligibility - Vehicle Payment
+# Rules financial - Vehicle Payment
 
 Sistema de regras de elegibilidade para financiamento de veículos.
 
