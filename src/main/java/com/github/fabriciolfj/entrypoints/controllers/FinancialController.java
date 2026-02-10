@@ -26,5 +26,7 @@ public record FinancialController() {
     })
     public void receiveInitFinancial(@Valid @RequestBody final DataFinancialRequest request) {
         log.info("receive payload financial {}", request);
+
+
     }
 }

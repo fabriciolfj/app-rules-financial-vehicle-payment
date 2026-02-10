@@ -24,9 +24,9 @@ aws dynamodb create-table \
         }]" \
     --global-secondary-indexes \
             "[{
-                \"IndexName\": \"ProposalIndex\",
+                \"IndexName\": \"CustomerIndex\",
                 \"KeySchema\": [
-                    {\"AttributeName\":\"proposal\",\"KeyType\":\"HASH\"}
+                    {\"AttributeName\":\"customer\",\"KeyType\":\"HASH\"}
                 ],
                 \"Projection\": {\"ProjectionType\":\"ALL\"}
             }]" \

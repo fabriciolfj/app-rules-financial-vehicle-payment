@@ -2,10 +2,10 @@ CONTEXTO:
 Analise esta financiamento de veiculo
 
 RENDA
-{CARDNUMBER}
+{VALUE}
 
 SCORE:
-{TRANSACTION}
+{SCORE}
 
 DETALHES:
 {DETALHES}
