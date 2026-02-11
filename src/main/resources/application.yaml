@@ -1,0 +1,71 @@
+server:
+  shutdown: graceful
+  tomcat:
+    connection-timeout: 5s
+    keep-alive-timeout: 15s
+    accept-count: 100
+    threads:
+      max: 200
+      min-spare: 5
+
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+      credentials:
+        secret-key: test
+
+  application:
+    name: financial
+  ai:
+    vectorstore:
+      qdrant:
+        initialize-schema: true
+        collection-name: financial
+        host: localhost
+        port: 6334
+    anthropic:
+      chat:
+        options:
+          model: claude-sonnet-4-5-20250929
+      api-key: ${KEY:123}
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+
+management:
+  otlp:
+    metrics:
+      export:
+        url: http://localhost:4318/v1/metrics
+  opentelemetry:
+    logging:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/logs
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/traces
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+    try-it-out-enabled: true
+    filter: true
+  scalar:
+    enabled: true
+    path: /scalar
+  show-actuator: true
+  cache:
+    disabled: false
