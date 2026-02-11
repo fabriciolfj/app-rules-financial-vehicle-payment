@@ -1,10 +1,12 @@
 package com.github.fabriciolfj.domain.entities;
 
 import com.github.fabriciolfj.domain.exceptions.ConditionVehicleNotFoundException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import static java.util.stream.Stream.of;
 
+@Getter
 @RequiredArgsConstructor
 public enum ConditionVehicleEnum {
 

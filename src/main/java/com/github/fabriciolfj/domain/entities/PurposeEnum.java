@@ -1,10 +1,12 @@
 package com.github.fabriciolfj.domain.entities;
 
 import com.github.fabriciolfj.domain.exceptions.PurposeNotFoundException;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.stream.Stream;
 
+@Getter
 @RequiredArgsConstructor
 public enum PurposeEnum {
     COMERCIAL("comercial"),

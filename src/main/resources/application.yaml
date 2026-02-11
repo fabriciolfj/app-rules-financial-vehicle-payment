@@ -10,6 +10,9 @@ server:
 
 
 spring:
+  threads:
+    virtual:
+      enabled: true
   cloud:
     aws:
       region:
