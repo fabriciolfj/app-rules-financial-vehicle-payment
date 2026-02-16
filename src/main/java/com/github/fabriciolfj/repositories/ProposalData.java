@@ -8,16 +8,16 @@ import java.time.LocalDate;
 
 @DynamoDbBean
 public record ProposalData(
-        @DynamoDbPartitionKey
-        @DynamoDbSecondaryPartitionKey(indexNames = "StatusIndex")
-        String proposal,
         @DynamoDbSortKey
+        @DynamoDbSecondarySortKey(indexNames = "StatusIndex")
+        String proposal,
+        @DynamoDbPartitionKey
         @DynamoDbAttribute("customer_document")
         @DynamoDbSecondaryPartitionKey(indexNames = "CustomerIndex")
         String customer,
         @DynamoDbSecondaryPartitionKey(indexNames = "EmailIndex")
         String email,
-        @DynamoDbSecondarySortKey(indexNames = "StatusIndex")
+        @DynamoDbSecondaryPartitionKey(indexNames = "StatusIndex")
         String status,
         @DynamoDbAttribute("customer_birth_date")
         LocalDate customerBirthDate,
