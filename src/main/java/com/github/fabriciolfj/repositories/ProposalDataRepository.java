@@ -1,3 +1,4 @@
+
 package com.github.fabriciolfj.repositories;
 
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ public class ProposalDataRepository {
         try {
             dataDynamoDbTable.putItem(data);
 
-            log.info("proposal save successfully {}", data.proposal());
+            log.info("proposal save successfully {}", data.getProposal());
         } catch (Exception e) {
             throw new RuntimeException();
         }

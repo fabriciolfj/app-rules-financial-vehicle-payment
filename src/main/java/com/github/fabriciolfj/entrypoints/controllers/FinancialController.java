@@ -1,6 +1,8 @@
 package com.github.fabriciolfj.entrypoints.controllers;
 
+import com.github.fabriciolfj.domain.usecases.PrepareAnalyseProposalUseCase;
 import com.github.fabriciolfj.entrypoints.controllers.dtos.DataFinancialRequest;
+import com.github.fabriciolfj.entrypoints.controllers.mapper.ProposalMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -13,7 +15,7 @@ import javax.validation.Valid;
 @Slf4j
 @RestController
 @RequestMapping("/api/financial/v1")
-public record FinancialController() {
+public record FinancialController(PrepareAnalyseProposalUseCase prepareAnalyseProposalUseCase) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -26,7 +28,8 @@ public record FinancialController() {
     })
     public void receiveInitFinancial(@Valid @RequestBody final DataFinancialRequest request) {
         log.info("receive payload financial {}", request);
+        var proposal = ProposalMapper.toEntity(request);
 
-
+        prepareAnalyseProposalUseCase.execute(proposal);
     }
 }

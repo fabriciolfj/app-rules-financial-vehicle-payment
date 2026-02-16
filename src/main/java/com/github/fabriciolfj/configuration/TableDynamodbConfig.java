@@ -11,7 +11,7 @@ import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 @Configuration
 public class TableDynamodbConfig {
 
-    private static final String TABLE_PROPOSAL = "Proposal";
+    private static final String TABLE_PROPOSAL = "proposal";
 
     @Bean
     public DynamoDbTable<ProposalData> proposalDataDynamoDbTable(final DynamoDbEnhancedClient client) {

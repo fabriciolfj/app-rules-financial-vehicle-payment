@@ -16,8 +16,8 @@ public enum PurposeEnum {
     private final String description;
 
     public static PurposeEnum toEnum(final String description) {
-        return Stream.of(PurposeEnum.toEnum(description))
-                .filter( v -> v.description.equals(description))
+        return Stream.of(PurposeEnum.values())
+                .filter( v -> v.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElseThrow(PurposeNotFoundException::new);
     }

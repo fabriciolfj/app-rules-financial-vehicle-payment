@@ -18,7 +18,7 @@ public enum ConditionVehicleEnum {
 
     public static ConditionVehicleEnum toEnum(final String description) {
         return of(ConditionVehicleEnum.values())
-                .filter(v -> v.description.equals(description))
+                .filter(v -> v.description.equalsIgnoreCase(description))
                 .findFirst()
                 .orElseThrow(ConditionVehicleNotFoundException::new);
     }

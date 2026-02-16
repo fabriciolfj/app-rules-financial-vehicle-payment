@@ -10,6 +10,10 @@ server:
 
 
 spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
   threads:
     virtual:
       enabled: true
@@ -19,6 +23,10 @@ spring:
         static: us-east-1
       credentials:
         secret-key: test
+        access-key: test
+      dynamodb:
+        endpoint: http://localhost:4566
+        region: us-east-1
 
   application:
     name: financial

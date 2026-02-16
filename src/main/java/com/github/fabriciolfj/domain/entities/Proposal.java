@@ -2,7 +2,6 @@ package com.github.fabriciolfj.domain.entities;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.cglib.core.Local;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
