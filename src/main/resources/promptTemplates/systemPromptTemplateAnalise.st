@@ -4,8 +4,7 @@ CONTEXTO:
 Analise esta solicitação de financiamento considerando o perfil financeiro e comportamental do cliente. Foque em identificar riscos de inadimplência e compatibilidade entre renda e compromisso financeiro.
 
 CLIENTE:
-CPF: {CPF}
-Nome: {CUSTOMER_NAME}
+CODE: {CODE}
 
 DADOS DO FINANCIAMENTO SOLICITADO:
 Veículo: {VEHICLE_MODEL} - Ano: {VEHICLE_YEAR}
@@ -13,8 +12,6 @@ Valor do Veículo: {VEHICLE_VALUE}
 Valor Financiado: {FINANCED_AMOUNT}
 Valor de Entrada: {DOWN_PAYMENT}
 Prazo: {TERM_MONTHS} meses
-Taxa de Juros: {INTEREST_RATE}% a.m.
-Valor da Parcela: {INSTALLMENT_VALUE}
 
 DADOS FINANCEIROS DO CLIENTE:
 Renda Mensal Comprovada: {MONTHLY_INCOME}
@@ -25,8 +22,6 @@ Histórico de Inadimplência: {DEFAULT_HISTORY}
 CONTEXTO TEMPORAL:
 Data da Solicitação: {REQUEST_DATE}
 
-HISTÓRICO DO CLIENTE:
-{CUSTOMER_HISTORY}
 
 CRITÉRIOS DE ANÁLISE:
 1. CAPACIDADE DE PAGAMENTO:

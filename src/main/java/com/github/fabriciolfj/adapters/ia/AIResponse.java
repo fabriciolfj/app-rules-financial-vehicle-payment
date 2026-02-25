@@ -1,3 +1,3 @@
-package com.github.fabriciolfj.adapters;
+package com.github.fabriciolfj.adapters.ia;
 
 public record AIResponse(String answer) { }
