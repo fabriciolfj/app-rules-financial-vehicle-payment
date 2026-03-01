@@ -31,7 +31,7 @@ public class IAAnalyseAdapter implements StartAnalyseProposalGateway {
 
     @Override
     public void process(final Proposal proposal) {
-        final var params= buildParams(proposal);
+        final var params = buildParams(proposal);
 
         final var result = chatClientAdapter.process(prompt, proposal, params, List.of(tool));
         log.info("return analyse ia {}", result);

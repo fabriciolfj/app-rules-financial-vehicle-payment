@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 @Component
 public class BureauAdapter {
 
-    public CustomerFinancialModel process(final String code) {
+    public CustomerFinancialModel process(final String codeCustomer) {
         return new CustomerFinancialModel(
                 new BigDecimal("8500.00"),
                 new BigDecimal("25.50"),

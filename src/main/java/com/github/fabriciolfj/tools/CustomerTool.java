@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class CustomerTool {
+public class CustomerTool implements Tools {
 
     private final BureauAdapter bureauAdapter;
 
     @Tool(name = "bureauDetails", description = "details finance customer")
-    public CustomerFinancialModel getDetailsFinance(@ToolParam(description = "code customer") final String code) {
-        log.info("get details customer {}", code);
+    public CustomerFinancialModel process(@ToolParam(description = "code customer") final String codeCustomer) {
+        log.info("get details customer {}", codeCustomer);
 
-        return bureauAdapter.process(code);
+        return bureauAdapter.process(codeCustomer);
     }
 }

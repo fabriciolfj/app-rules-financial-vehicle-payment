@@ -4,6 +4,7 @@ public class ConstantsEnrichAnalyse {
 
     private ConstantsEnrichAnalyse() { }
 
+    public static final String CODE               = "CODE";
     public static final String VEHICLE_MODEL      = "VEHICLE_MODEL";
     public static final String VEHICLE_YEAR       = "VEHICLE_YEAR";
     public static final String VEHICLE_VALUE      = "VEHICLE_VALUE";
@@ -18,4 +19,6 @@ public class ConstantsEnrichAnalyse {
     public static final String DEFAULT_HISTORY    = "DEFAULT_HISTORY";
 
     public static final String REQUEST_DATE       = "REQUEST_DATE";
+
+    public static final String CODE_CUSTOMER      = "CODE_CUSTOMER";
 }
