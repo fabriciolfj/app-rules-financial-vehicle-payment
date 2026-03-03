@@ -12,7 +12,7 @@ public class ParamsEnrichMapper {
 
     public static Map<String, Object> buildParams(final Proposal proposal) {
         return Map.ofEntries(
-                Map.entry(ConstantsEnrichAnalyse.CODE, proposal.getCode()),
+                Map.entry(ConstantsEnrichAnalyse.CODE,               proposal.getCode()),
                 Map.entry(ConstantsEnrichAnalyse.VEHICLE_MODEL,      proposal.getVehicleModel()),
                 Map.entry(ConstantsEnrichAnalyse.VEHICLE_YEAR,       String.valueOf(proposal.getVehicleYear())),
                 Map.entry(ConstantsEnrichAnalyse.VEHICLE_VALUE,      proposal.getVehicleValue().toPlainString()),

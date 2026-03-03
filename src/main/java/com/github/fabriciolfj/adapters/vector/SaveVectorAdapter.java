@@ -33,6 +33,7 @@ public class SaveVectorAdapter {
                 CODE : %s
                 ANSWER : s%
                 STATUS : s%
-                """.formatted(proposal.getCode(), aiResponse.answer(), aiResponse.status());
+                """
+                .formatted(proposal.getCode(), aiResponse.answer(), aiResponse.status());
     }
 }
