@@ -78,3 +78,14 @@ springdoc:
   show-actuator: true
   cache:
     disabled: false
+
+rabbitmq:
+  concurrencyMin: 4
+  concurrencyMax: 5
+  analyse:
+    queue: analyse-proposal
+    dlq:  analyse-proposal-dlq
+
+
+bureau:
+  url: http://localhost:9000/api/serasa/v1

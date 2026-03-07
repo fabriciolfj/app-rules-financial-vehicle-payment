@@ -19,21 +19,25 @@ public class IAAnalyseAdapter implements StartAnalyseProposalGateway {
     private final Resource prompt;
     private final ChatClientAdapter chatClientAdapter;
     private final CustomerTool tool;
+    private final SaveVectorAdapter saveVectorAdapter;
 
     public IAAnalyseAdapter(
-            @Value("classpath:/promptTemplates/systemPromptTemplateAnalise.st") Resource prompt,
-            ChatClientAdapter chatClientAdapter,
-            CustomerTool tool) {
+            @Value("classpath:/promptTemplates/systemPromptTemplateAnalise.st")
+            final Resource prompt,
+            final ChatClientAdapter chatClientAdapter,
+            final CustomerTool tool,
+            final SaveVectorAdapter saveVectorAdapter) {
         this.prompt = prompt;
         this.chatClientAdapter = chatClientAdapter;
         this.tool = tool;
+        this.saveVectorAdapter = saveVectorAdapter;
     }
 
     @Override
     public void process(final Proposal proposal) {
-        final var params = buildParams(proposal);
+        final var result = chatClientAdapter.process(prompt, proposal, buildParams(proposal), List.of(tool));
 
-        final var result = chatClientAdapter.process(prompt, proposal, params, List.of(tool));
         log.info("return analyse ia {}", result);
+        saveVectorAdapter.process(result, proposal.getCode());
     }
 }
