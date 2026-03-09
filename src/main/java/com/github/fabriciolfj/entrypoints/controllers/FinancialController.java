@@ -1,7 +1,7 @@
 package com.github.fabriciolfj.entrypoints.controllers;
 
 import com.github.fabriciolfj.domain.usecases.PrepareAnalyseProposalUseCase;
-import com.github.fabriciolfj.entrypoints.controllers.dtos.DataFinancialRequest;
+import com.github.fabriciolfj.entrypoints.controllers.dtos.request.DataFinancialRequest;
 import com.github.fabriciolfj.entrypoints.controllers.mapper.ProposalMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

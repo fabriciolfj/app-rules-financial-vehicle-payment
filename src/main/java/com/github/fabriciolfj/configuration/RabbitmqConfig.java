@@ -20,7 +20,7 @@ public class RabbitmqConfig {
     private final RabbitmqProperties rabbitmqProperties;
     private final RabbitmqQueueProperties rabbitmqQueueProperties;
 
-    @Bean
+    @Bean("rabbitListenerContainerFactory")
     public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(final ConnectionFactory connectionFactory) {
         final var container = new SimpleRabbitListenerContainerFactory();
         container.setMessageConverter(jsonMessageConverter());

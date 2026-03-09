@@ -1,7 +1,7 @@
 package com.github.fabriciolfj.entrypoints.controllers.mapper;
 
 import com.github.fabriciolfj.domain.entities.*;
-import com.github.fabriciolfj.entrypoints.controllers.dtos.DataFinancialRequest;
+import com.github.fabriciolfj.entrypoints.controllers.dtos.request.DataFinancialRequest;
 
 import java.time.LocalDate;
 import java.util.UUID;

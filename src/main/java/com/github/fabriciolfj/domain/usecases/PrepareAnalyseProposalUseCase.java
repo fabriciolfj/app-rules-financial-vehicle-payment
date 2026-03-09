@@ -12,11 +12,13 @@ import java.util.concurrent.StructuredTaskScope;
 @Service
 public record PrepareAnalyseProposalUseCase(List<StartAnalyseProposalGateway> startAnalyseProposalGateways) {
 
-    public void execute(final Proposal proposal) {
+    public Proposal execute(final Proposal proposal) {
         try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.allSuccessfulOrThrow())) {
             startAnalyseProposalGateways.forEach(c -> scope.fork(() -> c.process(proposal)));
 
             scope.join();
+
+            return proposal;
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

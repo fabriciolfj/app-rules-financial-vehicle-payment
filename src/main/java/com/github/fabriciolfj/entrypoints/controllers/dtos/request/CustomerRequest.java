@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.entrypoints.controllers.dtos;
+package com.github.fabriciolfj.entrypoints.controllers.dtos.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.fabriciolfj.annotation.ValidDocument;
