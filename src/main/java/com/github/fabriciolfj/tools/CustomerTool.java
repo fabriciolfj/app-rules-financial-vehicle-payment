@@ -19,6 +19,14 @@ public class CustomerTool implements Tools {
     public CustomerFinancialResponse process(@ToolParam(description = "code customer") final String codeCustomer) {
         log.info("get details customer {}", codeCustomer);
 
-        return bureauAdapter.process(codeCustomer);
+        try {
+            final var response =  bureauAdapter.process(codeCustomer);
+            log.info("response bureau {}, customer {}", response, codeCustomer);
+
+            return response;
+        } catch (Exception e) {
+            log.error("fail request bureau, details {}", e.getMessage());
+            throw e;
+        }
     }
 }

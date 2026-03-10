@@ -4,6 +4,7 @@ import com.github.fabriciolfj.adapters.ia.AIResponse;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.transformer.splitter.TextSplitter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,8 @@ public class DocumentMapper {
     private static Map<String, Object> toMap(final AIResponse response, final String codeProposal) {
         return Map.of(
                 "code", codeProposal,
-                "status", response.status()
+                "status", response.status(),
+                "createdAt", Instant.now().toEpochMilli()
         );
     }
 }

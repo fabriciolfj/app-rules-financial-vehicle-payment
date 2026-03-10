@@ -16,6 +16,6 @@ public record SaveVectorAdapter(VectorStore vectorStore,
       final var documents = toDocument(aiResponse, proposalCode, textSplitter);
 
       vectorStore.accept(documents);
-      log.info("save successfully vector to proposal {}", proposalCode);
+      log.info("save successfully vector to proposal {}, result ai {}", proposalCode, aiResponse);
     }
 }

@@ -13,11 +13,6 @@ public class ConstantsEnrichAnalyse {
     public static final String DOWN_PAYMENT       = "DOWN_PAYMENT";
     public static final String TERM_MONTHS        = "TERM_MONTHS";
 
-    public static final String MONTHLY_INCOME     = "MONTHLY_INCOME";
-    public static final String CURRENT_DEBT_RATIO = "CURRENT_DEBT_RATIO";
-    public static final String CREDIT_SCORE       = "CREDIT_SCORE";
-    public static final String DEFAULT_HISTORY    = "DEFAULT_HISTORY";
-
     public static final String REQUEST_DATE       = "REQUEST_DATE";
 
     public static final String CODE_CUSTOMER      = "CODE_CUSTOMER";
