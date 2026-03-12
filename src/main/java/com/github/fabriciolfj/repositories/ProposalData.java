@@ -1,5 +1,6 @@
 package com.github.fabriciolfj.repositories;
 
+import com.github.fabriciolfj.domain.entities.Status;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.*;
 
 import java.math.BigDecimal;
@@ -23,6 +24,12 @@ public class ProposalData {
         private String vehiclePurpose;
 
         public ProposalData() {
+        }
+
+        public ProposalData(final String code, final String customer, final String status) {
+                this.customer = customer;
+                this.proposal = code;
+                this.status = status;
         }
 
         public ProposalData(String proposal, String customer, String email, String status,

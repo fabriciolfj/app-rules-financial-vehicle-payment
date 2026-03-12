@@ -95,3 +95,8 @@ IMPORTANTE:
 - Calcule sempre a relação parcela/renda e LTV
 - Considere o perfil completo não apenas score isolado
 - Veículos com valor incompatível à renda devem ser sinalizados
+
+- STATUS POSSIVEIS
+    APPROVE
+    PENDING
+    DENIED

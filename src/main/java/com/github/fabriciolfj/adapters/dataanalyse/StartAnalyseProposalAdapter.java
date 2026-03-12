@@ -1,4 +1,4 @@
-package com.github.fabriciolfj.adapters.saveanalyse;
+package com.github.fabriciolfj.adapters.dataanalyse;
 
 import com.github.fabriciolfj.domain.entities.Proposal;
 import com.github.fabriciolfj.domain.usecases.StartAnalyseProposalGateway;

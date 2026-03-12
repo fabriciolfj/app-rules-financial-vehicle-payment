@@ -2,6 +2,7 @@ package com.github.fabriciolfj.entrypoints.listeners;
 
 import com.github.fabriciolfj.adapters.ia.FindProposalVectorAdapter;
 import com.github.fabriciolfj.commons.NotifyAnalyseProposalDTO;
+import com.github.fabriciolfj.domain.usecases.AnalyseProposalUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class ProposalListener {
 
     private final FindProposalVectorAdapter findProposalVectorAdapter;
+    private final AnalyseProposalUseCase analyseProposalUseCase;
 
     @RabbitListener(queues = "${rabbitmq.analyse.queue}", containerFactory = "rabbitListenerContainerFactory")
     public void receive(final NotifyAnalyseProposalDTO dto) {
@@ -26,5 +28,7 @@ public class ProposalListener {
 
         log.info(result.get().getText());
         log.info(result.get().getMetadata().get("status").toString());
+
+        analyseProposalUseCase.execute(dto.code(), dto.customer(), result.get().getMetadata().get("status").toString());
     }
 }

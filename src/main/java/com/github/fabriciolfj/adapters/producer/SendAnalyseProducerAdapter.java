@@ -17,7 +17,7 @@ public class SendAnalyseProducerAdapter implements NotifyAnalyseProposalGateway 
     private final RabbitmqQueueProperties rabbitmqQueueProperties;
 
     public void process(final Proposal proposal) {
-        final var dto = new ProposalCodeDto(proposal.getCode());
+        final var dto = new ProposalCodeDto(proposal.getCode(), proposal.getCustomerDocument());
 
         rabbitTemplate.convertSendAndReceive(rabbitmqQueueProperties.getQueue(), dto);
         log.info("message send successfully {}", dto);

@@ -43,11 +43,11 @@ public class ProposalDataRepository {
         }
     }
 
-    private void update(final ProposalData data) {
+    public void update(final ProposalData data) {
         try {
             dataDynamoDbTable.updateItem(UpdateItemEnhancedRequest.builder(ProposalData.class)
                     .item(data)
-                    .ignoreNullsMode(IgnoreNullsMode.DEFAULT)
+                    .ignoreNullsMode(IgnoreNullsMode.MAPS_ONLY)
                     .build());
             log.info("proposal updated successfully {}", data.getProposal());
         } catch (Exception e) {

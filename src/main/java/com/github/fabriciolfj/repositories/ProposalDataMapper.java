@@ -1,6 +1,7 @@
 package com.github.fabriciolfj.repositories;
 
 import com.github.fabriciolfj.domain.entities.Proposal;
+import com.github.fabriciolfj.domain.entities.StatusProposal;
 
 public class ProposalDataMapper {
 
@@ -21,6 +22,14 @@ public class ProposalDataMapper {
                 proposal.getVehicleValue(),
                 proposal.getVehicleCondition(),
                 proposal.getVehiclePurpose()
+        );
+    }
+
+    public static ProposalData toData(final StatusProposal proposal) {
+        return new ProposalData(
+                proposal.code(),
+                proposal.customer(),
+                proposal.status()
         );
     }
 }

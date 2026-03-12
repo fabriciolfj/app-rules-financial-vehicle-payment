@@ -1,3 +1,3 @@
 package com.github.fabriciolfj.adapters.producer;
 
-public record ProposalCodeDto(String code) { }
+public record ProposalCodeDto(String code, String customer) { }
