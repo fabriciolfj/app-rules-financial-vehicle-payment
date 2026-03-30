@@ -5,6 +5,7 @@ import com.github.fabriciolfj.tools.Tools;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.memory.ChatMemory;
+import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.support.ToolCallbacks;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,9 @@ public class ChatClientAdapter {
 
         var content = chatClient.prompt()
                 .system(it -> it.text(template).params(params))
+                .options(ChatOptions.builder()
+                        .temperature(0.2)
+                        .build())
                 .user(proposal.getCode())
                 .advisors(it -> it.param(ChatMemory.CONVERSATION_ID, proposal.getCode()))
                 .toolCallbacks(ToolCallbacks.from(tools.stream()
