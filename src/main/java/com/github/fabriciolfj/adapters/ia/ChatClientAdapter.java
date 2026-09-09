@@ -21,7 +21,7 @@ public class ChatClientAdapter {
     public AIResponse process(final Resource template, final Proposal proposal,
                               final Map<String, Object> params, final List<Tools> tools) {
 
-        var content = chatClient.prompt()
+        return chatClient.prompt()
                 .system(it -> it.text(template).params(params))
                 .options(ChatOptions.builder()
                         .temperature(0.2))
@@ -29,12 +29,6 @@ public class ChatClientAdapter {
                 .advisors(it -> it.param(ChatMemory.CONVERSATION_ID, proposal.getCode()))
                 .tools(tools.toArray())
                 .call()
-                .content();
-
-        return chatClient.prompt()
-                .user("Com base na análise a seguir, responda no formato solicitado:\n" + content)
-                .call()
-                .responseEntity(AIResponse.class)
-                .entity();
+                .entity(AIResponse.class);
     }
 }
