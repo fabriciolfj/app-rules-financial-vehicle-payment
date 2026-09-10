@@ -7,8 +7,6 @@ import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
 import org.springframework.stereotype.Component;
 
 import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Component

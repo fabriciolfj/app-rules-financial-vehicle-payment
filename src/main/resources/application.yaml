@@ -39,8 +39,7 @@ spring:
         port: 6334
     anthropic:
       chat:
-        options:
-          model: claude-sonnet-4-5-20250929
+        model: claude-sonnet-4-5-20250929
       api-key: ${KEY:123}
   lifecycle:
     timeout-per-shutdown-phase: 15s
