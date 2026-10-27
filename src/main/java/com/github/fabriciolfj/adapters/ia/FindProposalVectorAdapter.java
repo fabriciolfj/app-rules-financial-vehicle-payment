@@ -20,7 +20,7 @@ public record FindProposalVectorAdapter(VectorStore vectorStore) {
         var searchRequest = SearchRequest.builder()
                 .query(codeProposal)
                 .topK(10)
-                .filterExpression(filter)
+                .filterExpression(filter)       
                 .similarityThreshold(0.0)
                 .build();
 
